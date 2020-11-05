@@ -31,4 +31,13 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+                echo 'SUCCUSS!!!'
+        }
+        failure {
+                echo 'FAILED!!!'
+                echo "Something is wrong with ${env.BUILD_URL}"
+        }
+    }
 }
