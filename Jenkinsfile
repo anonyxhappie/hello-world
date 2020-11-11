@@ -49,20 +49,10 @@ pipeline {
     post {
         success {
                 echo 'SUCCESS!!!'
-            emailext(
-		        to: 'denowc@gmail.com',
-		        subject: 'Release success', 
-		        body: 'Everything went good',
-		    )
         }
         failure {
                 echo 'FAILED!!!'
                 echo "Something is wrong with ${env.BUILD_URL}"
-            emailext(
-		        to: 'denowc@gmail.com',
-		        subject: 'Release failed', 
-		        body: 'Something went wrong',
-		    )
         }
     }
 }
